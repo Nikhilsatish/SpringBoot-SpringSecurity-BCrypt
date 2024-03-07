@@ -68,7 +68,7 @@ input[type="submit"]:hover {
 	<div class="container">
 		<div class="alert-message">${message}</div>
 		<div class="form">
-			<form:form class="form" action="registerUser" method="post"
+			<form:form class="form" action="registration" method="post"
 				modelAttribute="user">
 				<h2>Registration Form</h2>
 
@@ -83,6 +83,7 @@ input[type="submit"]:hover {
 
 				<input type="submit" value="Register">
 			</form:form>
+			<a href="/login">Sign In</a>
 		</div>
 	</div>
 </body>

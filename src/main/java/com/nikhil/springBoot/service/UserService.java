@@ -10,16 +10,16 @@ import com.nikhil.springBoot.repository.UserRepository;
 
 @Service
 public class UserService {
-//	
-//	@Autowired
-//	private PasswordEncoder passwordEncoder;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 	@Autowired
 	private UserRepository userRepository;
 	
 	public User saveUser(UserDTO user) {
 		//encode the password
-		User saveUser = new User(user.getEmail(), user.getPassword() , user.getRole(), user.getFullname());
+		User saveUser = new User(user.getEmail(), passwordEncoder.encode(user.getPassword()), user.getRole(), user.getFullname());
 		return userRepository.save(saveUser);
 	}
 
